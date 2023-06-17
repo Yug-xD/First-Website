@@ -1,0 +1,226 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    --main-light: #e0e0e0;
+    --main-dark: #1f3d53;
+    min-height: 100vh;
+}
+nav{
+    background-color: var(--main-light);
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid var(--main-dark);
+    position: fixed;
+}
+.logo{
+    color: var(--main-dark);
+    font-size: 24px;
+    margin-left: 40px;
+    line-height: 80px;
+    cursor: default;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: var(--main-dark);
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+nav ul li a:hover{
+    background-color: var(--main-dark);
+    transition: .3s linear;
+    color: var(--main-light);
+}
+.checkbtn{
+    font-size: 30px;
+    color: var(--main-dark);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width: 952px){
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--main-light);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover, .active{
+        background: none;
+        color: var(--main-dark);
+    }
+    #check:checked ~ ul{
+        left: 0; 
+    }
+}
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 100%;
+    padding: 0 100px 0 100px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .content{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 640px) {
+    .content{
+        margin-top: 15%;
+    }
+}
+.face{
+    animation: anim1 infinite  2.5s;
+}
+@keyframes anim1{
+    40%{
+        transform: translateY(-2%);
+    }
+}
+.intro-txt{
+    padding-left: 10%;
+}
+.main-intro-txt{
+    margin-bottom: 25px;
+    font-size: 64px;
+    color: #4991c5;
+    text-align: left;
+}
+.secondary-intro-txt{
+    font-size: 44px;
+    color: var(--main-dark);
+    line-break: auto;
+}
+.work-content{
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: calc(175vh - 50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.line{
+    height: 5px;
+    background-color: var(--main-dark);
+    border: none;
+    border-radius: 7px;
+    z-index: -1;
+    width: 75%;
+}
+.line1{
+    position: absolute;
+    top: calc(151vh - 50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.view-btn{
+    height: 35px;
+    border: none;
+    background-color: var(--main-dark);
+    padding: 0 20px;
+    font-size: 15px;
+    border-radius: 25px;
+}
+.view-btn:hover{
+    transition: .3s;
+    box-shadow: 0 0 5px var(--main-dark),
+    0 0 25px var(--main-dark);
+}
+a{
+    color: var(--main-light);
+}
+.work-name{
+    font-size: 44px;
+    color: var(--main-dark);
+}
+.work-desc{
+    color: var(--main-dark);
+    font-size: 18px;
+    opacity: 0.7;
+    padding-bottom: 20px;
+}
+.work-img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 120px;
+    width: 75%;
+}
+.line2{
+    position: absolute;
+    top: calc(237vh);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contact-content{
+    position: absolute;
+    top: calc(255vh);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: var(--main-dark);
+    border: 1px solid #000;
+}
+.btn{
+    background-color: var(--main-light);
+    color: var(--main-dark);
+    margin: 50px;
+}
+.btn:hover{
+    transition: .3s;
+    box-shadow: 0 0 5px var(--main-light),
+    0 0 25px var(--main-light);
+}
